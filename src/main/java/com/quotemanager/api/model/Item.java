@@ -21,6 +21,6 @@ public class Item {
     private ItemUnit unit;
     private BigDecimal price;
 
-    @OneToMany(mappedBy="item", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy="item", fetch = FetchType.LAZY)
     private List<QuoteItem> quoteItem;
 }

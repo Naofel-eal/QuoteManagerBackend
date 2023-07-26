@@ -25,7 +25,7 @@ public class CRUDController<ENTITY, SERVICE extends CRUDService<ENTITY>> {
     @GetMapping("/get/{id}")
     public ResponseEntity<ENTITY> get(@PathVariable Long id) {
         ENTITY entity = this.service.get(id);
-        return entity != null ? ResponseEntity.ok(entity) : ResponseEntity.notFound().build();
+        return ResponseEntity.ok(entity);
     }
 
     @GetMapping("/list/{limit}")

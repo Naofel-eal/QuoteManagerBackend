@@ -15,10 +15,11 @@ public class QuoteItem {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "quoteItems")
+    @JoinColumn(name = "quote_id")
     private Quote quote;
 
     @ManyToOne
+    @JoinColumn(name = "item_id")
     private Item item;
 
     private Integer quantity;
