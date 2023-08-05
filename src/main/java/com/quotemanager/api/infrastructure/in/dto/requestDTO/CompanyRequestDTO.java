@@ -1,17 +1,25 @@
 package com.quotemanager.api.infrastructure.in.dto.requestDTO;
 
-import com.quotemanager.api.domain.model.enumeration.CompanyStatus;
+import com.quotemanager.api.core.domain.model.enumeration.CompanyStatus;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record CompanyRequestDTO(
-        String name,
-        String address,
-        String tel,
-        String mail,
-        CompanyStatus status,
-        String SIREN,
-        String SIRET,
-        String RNE,
-        String TVANumber,
-        Float capital,
-        Long ownerId
-){}
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class CompanyRequestDTO {
+    private String name;
+    private String address;
+    private String tel;
+    private String mail;
+    private CompanyStatus status;
+    private String SIREN;
+    private String SIRET;
+    private String RNE;
+    private String TVANumber;
+    private Float capital;
+    private Long ownerId;
+}

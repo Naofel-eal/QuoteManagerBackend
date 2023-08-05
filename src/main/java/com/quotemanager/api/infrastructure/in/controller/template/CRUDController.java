@@ -1,6 +1,7 @@
 package com.quotemanager.api.infrastructure.in.controller.template;
 
-import com.quotemanager.api.application.service.template.CRUDService;
+import com.quotemanager.api.core.application.service.template.CRUDService;
+import com.quotemanager.api.core.domain.model.User;
 import com.quotemanager.api.infrastructure.in.mapper.template.IN_MapperTemplate;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;

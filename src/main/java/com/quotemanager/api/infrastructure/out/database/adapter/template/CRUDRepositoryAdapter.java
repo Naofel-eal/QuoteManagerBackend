@@ -1,6 +1,6 @@
 package com.quotemanager.api.infrastructure.out.database.adapter.template;
 
-import com.quotemanager.api.application.repository.template.CRUDRepository;
+import com.quotemanager.api.core.application.repository.template.CRUDRepository;
 import com.quotemanager.api.infrastructure.out.mapper.template.OUT_MapperTemplate;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

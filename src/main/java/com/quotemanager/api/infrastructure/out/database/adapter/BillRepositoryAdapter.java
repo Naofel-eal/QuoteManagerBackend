@@ -1,7 +1,7 @@
 package com.quotemanager.api.infrastructure.out.database.adapter;
 
-import com.quotemanager.api.application.repository.BillRepository;
-import com.quotemanager.api.domain.model.Bill;
+import com.quotemanager.api.core.application.repository.BillRepository;
+import com.quotemanager.api.core.domain.model.Bill;
 import com.quotemanager.api.infrastructure.out.database.adapter.template.CRUDRepositoryAdapter;
 import com.quotemanager.api.infrastructure.out.database.model.BillDBO;
 import com.quotemanager.api.infrastructure.out.database.repository.BillDatabaseRepository;

@@ -2,7 +2,7 @@ package com.quotemanager.api.infrastructure.in.controller;
 
 import com.quotemanager.api.infrastructure.in.dto.requestDTO.CompanyRequestDTO;
 import com.quotemanager.api.infrastructure.in.dto.responseDTO.CompanyResponseDTO;
-import com.quotemanager.api.application.service.CompanyService;
+import com.quotemanager.api.core.application.service.CompanyService;
 import com.quotemanager.api.infrastructure.in.mapper.IN_CompanyMapper;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;

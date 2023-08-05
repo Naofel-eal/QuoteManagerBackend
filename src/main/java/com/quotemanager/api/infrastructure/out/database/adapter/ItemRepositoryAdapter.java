@@ -1,7 +1,7 @@
 package com.quotemanager.api.infrastructure.out.database.adapter;
 
-import com.quotemanager.api.application.repository.ItemRepository;
-import com.quotemanager.api.domain.model.Item;
+import com.quotemanager.api.core.application.repository.ItemRepository;
+import com.quotemanager.api.core.domain.model.Item;
 import com.quotemanager.api.infrastructure.out.database.adapter.template.CRUDRepositoryAdapter;
 import com.quotemanager.api.infrastructure.out.database.model.ItemDBO;
 import com.quotemanager.api.infrastructure.out.database.repository.ItemDatabaseRepository;

@@ -16,7 +16,7 @@ public class UserDBO {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String firstname;
-    private String name;
+    private String lastname;
     private String mail;
     private String password;
 

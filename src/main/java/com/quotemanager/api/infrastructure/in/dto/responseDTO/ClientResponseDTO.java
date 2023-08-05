@@ -1,14 +1,21 @@
 package com.quotemanager.api.infrastructure.in.dto.responseDTO;
 
-import com.quotemanager.api.domain.model.enumeration.ClientType;
+import com.quotemanager.api.core.domain.model.enumeration.ClientType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record ClientResponseDTO(
-        Long id,
-        String name,
-        String mail,
-        String tel,
-        String address,
-        String details,
-        ClientType clientType,
-        Long companyId
-){}
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class ClientResponseDTO {
+    private Long id;
+    private String name;
+    private String mail;
+    private String tel;
+    private String address;
+    private String details;
+    private ClientType clientType;
+}

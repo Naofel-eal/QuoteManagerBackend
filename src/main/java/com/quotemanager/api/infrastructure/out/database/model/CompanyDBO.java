@@ -1,6 +1,6 @@
 package com.quotemanager.api.infrastructure.out.database.model;
 
-import com.quotemanager.api.domain.model.enumeration.CompanyStatus;
+import com.quotemanager.api.core.domain.model.enumeration.CompanyStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

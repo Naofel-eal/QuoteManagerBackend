@@ -1,13 +1,21 @@
 package com.quotemanager.api.infrastructure.in.dto.requestDTO;
 
-import com.quotemanager.api.domain.model.enumeration.ClientType;
+import com.quotemanager.api.core.domain.model.enumeration.ClientType;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-public record ClientRequestDTO(
-        String name,
-        String mail,
-        String tel,
-        String address,
-        String details,
-        ClientType clientType,
-        Long companyId
-){}
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class ClientRequestDTO {
+    private String name;
+    private String mail;
+    private String tel;
+    private String address;
+    private String details;
+    private ClientType clientType;
+    private Long companyId;
+}
