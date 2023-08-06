@@ -17,6 +17,7 @@ public class CRUDRepositoryAdapter<DOMAIN_ENTITY, DB_ENTITY, ID_TYPE, REPOSITORY
 
     @Override
     public void save(DOMAIN_ENTITY entity) {
+        DB_ENTITY test = this.mapper.toDatabaseEntity((entity));
         this.repository.save(this.mapper.toDatabaseEntity(entity));
     }
 

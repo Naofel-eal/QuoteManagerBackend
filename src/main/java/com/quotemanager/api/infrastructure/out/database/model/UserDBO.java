@@ -1,11 +1,12 @@
 package com.quotemanager.api.infrastructure.out.database.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,6 +21,7 @@ public class UserDBO {
     private String mail;
     private String password;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Collection<CompanyDBO> companies;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "owner_id")
+    private List<CompanyDBO> companies;
 }

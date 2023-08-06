@@ -1,5 +1,7 @@
 package com.quotemanager.api.infrastructure.out.database.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.quotemanager.api.core.domain.model.enumeration.CompanyStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,15 +23,11 @@ public class CompanyDBO {
     private String tel;
     private String mail;
     private CompanyStatus status;
-    private String SIREN;
-    private String SIRET;
-    private String RNE;
-    private String TVANumber;
+    private String siren;
+    private String siret;
+    private String rne;
+    private String tvaNumber;
     private float capital;
-
-    @ManyToOne
-    @JoinColumn(name = "owner_id", nullable = false)
-    private UserDBO owner;
 
     @OneToMany(mappedBy="company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ClientDBO> clients;

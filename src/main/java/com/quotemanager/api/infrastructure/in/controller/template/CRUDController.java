@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-public class CRUDController<ENTITY, SERVICE extends CRUDService<ENTITY>, REQUEST_DTO, RESPONSE_DTO, MAPPER extends IN_MapperTemplate<ENTITY, REQUEST_DTO, RESPONSE_DTO>> {
+public class CRUDController<ENTITY, SERVICE extends CRUDService<ENTITY, REQUEST_DTO, RESPONSE_DTO>, REQUEST_DTO, RESPONSE_DTO, MAPPER extends IN_MapperTemplate<ENTITY, REQUEST_DTO, RESPONSE_DTO>> {
     protected SERVICE service;
     protected MAPPER mapper;
 
@@ -21,29 +21,23 @@ public class CRUDController<ENTITY, SERVICE extends CRUDService<ENTITY>, REQUEST
 
     @PostMapping("/create")
     public ResponseEntity<RESPONSE_DTO> create(@RequestBody REQUEST_DTO requestDTO) {
-        this.service.create(this.mapper.toDomainEntity(requestDTO));
+        this.service.create(requestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<RESPONSE_DTO> get(@PathVariable Long id) {
-        try {
-            RESPONSE_DTO responseDTO = this.mapper.toResponseDTO(this.service.get(id));
-            return ResponseEntity.ok(responseDTO);
-        } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(this.service.get(id));
     }
 
     @GetMapping("/list/{limit}")
     public ResponseEntity<List<RESPONSE_DTO>> list(@PathVariable Integer limit) {
-        List<RESPONSE_DTO> responseDTOs = this.mapper.toResponseDTOs(this.service.list(limit));
-        return new ResponseEntity<>(responseDTOs, HttpStatus.OK);
+        return new ResponseEntity<>(this.service.list(limit), HttpStatus.OK);
     }
 
     @PutMapping("/update")
     public ResponseEntity<RESPONSE_DTO> update(@Valid @RequestBody REQUEST_DTO requestDTO) {
-        this.service.update(this.mapper.toDomainEntity(requestDTO));
+        this.service.update(requestDTO);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

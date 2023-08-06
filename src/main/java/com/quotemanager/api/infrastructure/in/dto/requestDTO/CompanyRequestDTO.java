@@ -11,15 +11,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CompanyRequestDTO {
+    private Long id;
     private String name;
     private String address;
     private String tel;
     private String mail;
     private CompanyStatus status;
-    private String SIREN;
-    private String SIRET;
-    private String RNE;
-    private String TVANumber;
+    private String siren;
+    private String siret;
+    private String rne;
+    private String tvaNumber;
     private Float capital;
     private Long ownerId;
 }

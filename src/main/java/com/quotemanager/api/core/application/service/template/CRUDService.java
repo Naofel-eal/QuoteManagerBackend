@@ -7,11 +7,11 @@ import java.util.List;
 
 @Service
 @Transactional
-public interface CRUDService<ENTITY> {
-    void create(ENTITY entity);
-    ENTITY get(Long id) ;
-    void update(ENTITY entity);
+public interface CRUDService<ENTITY, REQUEST_DTO, RESPONSE_DTO> {
+    void create(REQUEST_DTO entity);
+    RESPONSE_DTO get(Long id) ;
+    void update(REQUEST_DTO entity);
     void delete(Long id);
-    List<ENTITY> list(Integer limit);
+    List<RESPONSE_DTO> list(Integer limit);
 
 }

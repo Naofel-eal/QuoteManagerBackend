@@ -5,6 +5,6 @@ import com.quotemanager.api.infrastructure.out.mapper.template.OUT_MapperTemplat
 import com.quotemanager.api.infrastructure.out.database.model.CompanyDBO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring", uses = OUT_ClientMapper.class)
+@Mapper(componentModel = "spring", uses = {OUT_ClientMapper.class, OUT_QuoteMapper.class})
 public interface OUT_CompanyMapper extends OUT_MapperTemplate<Company, CompanyDBO> {
 }

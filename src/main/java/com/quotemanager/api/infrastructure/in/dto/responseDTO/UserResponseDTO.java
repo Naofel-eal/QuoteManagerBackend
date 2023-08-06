@@ -16,6 +16,5 @@ public class UserResponseDTO {
     private String firstname;
     private String lastname;
     private String mail;
-    private String password;
     private List<CompanyResponseDTO> companies;
 }

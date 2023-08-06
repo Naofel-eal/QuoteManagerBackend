@@ -19,12 +19,11 @@ public class CompanyResponseDTO {
     private String tel;
     private String mail;
     private CompanyStatus status;
-    private String SIREN;
-    private String SIRET;
-    private String RNE;
-    private String TVANumber;
+    private String siren;
+    private String siret;
+    private String rne;
+    private String tvaNumber;
     private Float capital;
     private List<ClientResponseDTO> clients;
-    private List<Long> quotes;
-    private Long ownerId;
+    private List<QuoteResponseDTO> quotes;
 }
