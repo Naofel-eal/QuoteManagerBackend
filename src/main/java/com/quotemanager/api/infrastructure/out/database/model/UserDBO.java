@@ -21,7 +21,11 @@ public class UserDBO {
     private String mail;
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "owner_id")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<CompanyDBO> companies;
+
+    public void addCompany(CompanyDBO company) {
+        companies.add(company);
+        company.setOwner(this);
+    }
 }

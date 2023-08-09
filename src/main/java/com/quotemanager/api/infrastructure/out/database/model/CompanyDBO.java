@@ -29,15 +29,13 @@ public class CompanyDBO {
     private String tvaNumber;
     private float capital;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id", referencedColumnName = "id", nullable = false)
+    private UserDBO owner;
+
     @OneToMany(mappedBy="company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<ClientDBO> clients;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<QuoteDBO> quotes;
-
-    public void addClient(ClientDBO client) {
-        clients.add(client);
-    }
-
-    public void removeClient(ClientDBO client) { clients.remove(client); }
 }

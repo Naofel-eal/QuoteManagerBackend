@@ -44,5 +44,4 @@ public class CompanyServiceImplementation extends CRUDServiceImplementation<Comp
     public List<ClientResponseDTO> getAllClients(CompanyRequestDTO companyRequestDTO) {
         return this.clientMapper.toResponseDTOs(this.repository.getReferenceById(companyRequestDTO.getId()).getClients());
     }
-
 }
