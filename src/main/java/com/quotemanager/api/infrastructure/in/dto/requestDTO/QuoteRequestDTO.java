@@ -22,8 +22,6 @@ public class QuoteRequestDTO {
     private Company company;
     private Client client;
     private List<ItemRequestDTO> items;
-    private BigDecimal price;
     private BigDecimal tva;
     private String details;
-
 }

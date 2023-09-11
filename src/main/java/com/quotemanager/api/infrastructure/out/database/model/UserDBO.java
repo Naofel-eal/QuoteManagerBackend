@@ -1,6 +1,5 @@
 package com.quotemanager.api.infrastructure.out.database.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +20,7 @@ public class UserDBO {
     private String mail;
     private String password;
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "owner")
     private List<CompanyDBO> companies;
 
     public void addCompany(CompanyDBO company) {

@@ -11,7 +11,7 @@ import com.quotemanager.api.infrastructure.in.dto.responseDTO.CompanyResponseDTO
 import java.util.List;
 
 public interface CompanyService extends CRUDService<Company, CompanyRequestDTO, CompanyResponseDTO> {
-    void addClient(CompanyRequestDTO companyRequestDTO, ClientRequestDTO client);
-    void deleteClient(CompanyRequestDTO companyRequestDTO, ClientRequestDTO client);
-    List<ClientResponseDTO> getAllClients(CompanyRequestDTO companyRequestDTO);
+    void addClient(Long companyId, ClientRequestDTO client);
+    void deleteClient(Long companyId, ClientRequestDTO client);
+    List<ClientResponseDTO> getAllClients(Long companyId);
 }

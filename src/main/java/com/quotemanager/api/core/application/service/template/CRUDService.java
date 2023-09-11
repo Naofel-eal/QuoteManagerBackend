@@ -13,5 +13,4 @@ public interface CRUDService<ENTITY, REQUEST_DTO, RESPONSE_DTO> {
     void update(REQUEST_DTO entity);
     void delete(Long id);
     List<RESPONSE_DTO> list(Integer limit);
-
 }

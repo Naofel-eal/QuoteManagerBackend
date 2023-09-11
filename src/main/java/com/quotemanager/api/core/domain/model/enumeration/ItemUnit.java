@@ -1,19 +1,18 @@
 package com.quotemanager.api.core.domain.model.enumeration;
 
 public enum ItemUnit {
-    METER("Meter"),
-    SQUARE_METER("SquareMeter"),
-    LITER("Liter"),
-    CUBIC_METER("CubicMeter"),
-    KILOGRAM("Kilogram"),
-    GRAM("Gram"),
-    PIECE("Piece"),
-    KILOGRAM_PER_CUBIC_METER("KilogramPerCubicMeter");
-    private final String value;
+    METER("METER"),
+    SQUARE_METER("SQUARE_METER"),
+    LITER("LITER"),
+    CUBIC_METER("CUBIC_METER"),
+    KILOGRAM("KILOGRAM"),
+    GRAM("GRAM"),
+    PIECE("PIECE"),
+    KILOGRAM_PER_CUBIC_METER("KILOGRAM_PER_CUBIC_METER");
 
-    ItemUnit(String value) { this.value = value; }
+    private final String itemUnit;
 
-    public String getUnit() {
-        return value;
-    }
+    ItemUnit(String itemUnit) { this.itemUnit = itemUnit; }
+
+    public String getItemUnit() { return this.itemUnit; }
 }

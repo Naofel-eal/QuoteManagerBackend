@@ -27,21 +27,22 @@ public class CompanyServiceImplementation extends CRUDServiceImplementation<Comp
         this.clientMapper = clientMapper;
     }
     @Override
-    public void addClient(CompanyRequestDTO companyRequestDTO, ClientRequestDTO client) {
-        Company company = this.repository.getReferenceById(companyRequestDTO.getId());
-        company.addClient(this.clientMapper.toDomainEntity(client));
+    public void addClient(Long companyId, ClientRequestDTO clientRequestDTO) {
+        Company company = this.repository.getReferenceById(companyId);
+        Client client = this.clientMapper.toDomainEntity(clientRequestDTO);
+        company.addClient(client);
         this.repository.save(company);
     }
 
     @Override
-    public void deleteClient(CompanyRequestDTO companyRequestDTO, ClientRequestDTO client) {
-        Company company = this.repository.getReferenceById(companyRequestDTO.getId());
+    public void deleteClient(Long companyId, ClientRequestDTO client) {
+        Company company = this.repository.getReferenceById(companyId);
         company.removeClient(this.clientMapper.toDomainEntity(client));
         this.repository.save(company);
     }
 
     @Override
-    public List<ClientResponseDTO> getAllClients(CompanyRequestDTO companyRequestDTO) {
-        return this.clientMapper.toResponseDTOs(this.repository.getReferenceById(companyRequestDTO.getId()).getClients());
+    public List<ClientResponseDTO> getAllClients(Long companyId) {
+        return this.clientMapper.toResponseDTOs(this.repository.getReferenceById(companyId).getClients());
     }
 }

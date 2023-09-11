@@ -1,6 +1,6 @@
 package com.quotemanager.api.infrastructure.in.dto.responseDTO;
 
-import com.quotemanager.api.core.domain.model.ItemUnit;
+import com.quotemanager.api.core.domain.model.enumeration.ItemUnit;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
